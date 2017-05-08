@@ -3,3 +3,17 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+fieldset {
+    margin: 10px 0;
+}
+
+
+.tabbed{
+    width:50%;
+    float: left;
+}
+
+.not-selected{
+    display: none;
+}

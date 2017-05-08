@@ -9,9 +9,13 @@ class NameValidator extends Validator
     public function validate()
     {
         if($this->isValidatable()) {
-            if(strlen($this->value) > $this->length)
+            if(strlen($this->value) > $this->length) {
                 $this->errorMessage = $this->length . ' characters maximum';
-            $this->validated = true;
+            }
+            if(preg_match("/^[a-zA-Z]+$/", $this->value) != 1) {
+                $this->errorMessage = 'Name pattern does not match.';
+            }
+            $this->validated=true;
         }
     }
 

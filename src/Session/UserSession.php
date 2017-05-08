@@ -17,7 +17,7 @@ class UserSession extends DatabaseSession {
             session_start();
         }
         $parameters['fields'] = array('username', 'auth');
-        $parameters['table'] = 'users';
+        $parameters['table'] = 'userdetails';
         $parameters['conditions'] = array('username'=>$name, 'password'=>$password);
         $result = $this->dbConn->select($parameters);
         if($result) {
