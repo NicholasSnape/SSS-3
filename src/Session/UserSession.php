@@ -16,12 +16,12 @@ class UserSession extends DatabaseSession {
             $this->logOut();
             session_start();
         }
-        $parameters['fields'] = array('username', 'auth');
-        $parameters['table'] = 'userdetails';
+        $parameters['fields'] = array('*');
+        $parameters['table'] = 'sss3_users';
         $parameters['conditions'] = array('username'=>$name, 'password'=>$password);
         $result = $this->dbConn->select($parameters);
         if($result) {
-            $_SESSION['authorisation'] = $result[0]['auth'];
+            $_SESSION['authorisation'] = $result[0]['u_id'];
             $_SESSION['username'] = $name;
             return true;
         } else {
